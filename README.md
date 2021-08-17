@@ -17,7 +17,6 @@ My Diploma project represents a complex web service testing automatization, whic
 ## Preconditions
 
 Before launch you need to fullfill next requirments:
-*Requerments:*
 1. Clone git [repository](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester)
 or use VCS Git integrated in IntelliJ IDEA
 2. Install and launch Docker Desktop. Installation process depends on operating system.
