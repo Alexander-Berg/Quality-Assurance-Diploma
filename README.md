@@ -18,12 +18,12 @@ My Diploma project represents a complex web service testing automatization, whic
 
 Before launch you need to fullfill next requirments.
 *Requerments:*
-1.Clone git repository [link](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester)
+*1.Clone git [repository](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester)
 or use VCS Git integrated in IntelliJ IDEA
-2.Install and launch Docker Desktop.Installation process depends on operating system.
+*2.Install and launch Docker Desktop.Installation process depends on operating system.
 [Docker Download](https://docs.docker.com/get-docker/)
  [Additional guides how to install docker](https://github.com/netology-code/aqa-homeworks/blob/master/docker/installation.md)
-3. Open project in IntelliJ IDEA
+*3. Open project in IntelliJ IDEA
 
 ### Application launch
 
