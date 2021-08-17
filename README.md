@@ -26,21 +26,21 @@ or use VCS Git integrated in IntelliJ IDEA
 ### Application launch
 
 1. Launch requered databases (MySQL и PostgreSQL), and NodeJS. Launch parameters in file `docker-compose.yml`.
-2.Write Launch command in terminal:
+2. Write Launch command in terminal:
 > * `docker-compose up -d`
 
-2. In new terminal tab exeute command depending on database:
+3. In new terminal tab exeute command depending on database:
 
 > * `java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar ./artifacts/aqa-shop.jar` - for MySQL
 > * `java -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app -jar ./artifacts/aqa-shop.jar` - for PostgreSQL
 
-3. Verification that containers works:
+4. Verification that containers works:
 
 > * `docker ps`
 
 > ![Starting the container](doc/pic/StartConteyner.png)
 
-4. Application must start on this adress:
+5. Application must start on this adress:
 
 > * `http://localhost:8080/`
  
