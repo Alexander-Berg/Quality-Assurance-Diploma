@@ -2,7 +2,7 @@
 
 # "Quality Assurance Engineer Diploma project"
 
-Diploma project represents a complex web service testing automatization, which interacts with Bank's database & API.
+My Diploma project represents a complex web service testing automatization, which interacts with Bank's database & API.
 
 ## Documentation
 
