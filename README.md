@@ -2,7 +2,11 @@
 
 # Quality assurance Engineer Diploma project
 
+<<<<<<< HEAD
 This Diploma project represents complex servise testing automatization,which interacts with Bank Database and API.
+=======
+My Diploma project represents a complex web service testing automatization, which interacts with Bank's database & API.
+>>>>>>> d907fdfeb62f84336902d58c1077c42be26838ab
 
 ## Documentation
 
@@ -16,7 +20,16 @@ This Diploma project represents complex servise testing automatization,which int
 
 ## Preconditions
 
+<<<<<<< HEAD
 Перед запуском необходимо выполнить следующие предусловия. Если у вас уже есть необходимое ПО, то понадобится только п.1 и запуск Docker.
+=======
+Before launch you need to fullfill next requirments:
+1. Clone git [repository](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester)
+or use VCS Git integrated in IntelliJ IDEA
+2. Install and launch Docker Desktop. Installation process depends on operating system.
+[Docker Download](https://docs.docker.com/get-docker/)
+3. Open project in IntelliJ IDEA
+>>>>>>> d907fdfeb62f84336902d58c1077c42be26838ab
 
 *Предусловия:*
 1. Необходимо склонировать репозиторий или скачать архив по [ссылке](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester.git). Или воспользоваться VCS Git, встроенной в
@@ -29,20 +42,36 @@ This Diploma project represents complex servise testing automatization,which int
 1. Запустить необходимые базы данных (MySQL и PostgreSQL), а также NodeJS. Параметры для запуска хранятся в
    файле `docker-compose.yml`. Для запуска необходимо ввести в терминале команду:
 
+<<<<<<< HEAD
 > * `docker-compose up -d`
 
 2. В новой вкладке терминала ввести следующую команду в зависимости от базы данных
+=======
+1. Launch requered databases (MySQL и PostgreSQL), and NodeJS. Launch parameters in file `docker-compose.yml`.
+2. Write Launch command in terminal:
+> * `docker-compose up -d`
+
+3. In new terminal tab exeute command depending on database:
+>>>>>>> d907fdfeb62f84336902d58c1077c42be26838ab
 
 > * `java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar ./artifacts/aqa-shop.jar` - для MySQL
 > * `java -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app -jar ./artifacts/aqa-shop.jar` - для PostgreSQL
 
+<<<<<<< HEAD
 3. Проверка работающих контейнеров:
+=======
+4. Verification that containers works:
+>>>>>>> d907fdfeb62f84336902d58c1077c42be26838ab
 
 > * `docker ps`
 
 > ![Starting the container](doc/pic/StartConteyner.png)
 
+<<<<<<< HEAD
 4. Приложение должно запуститься по адресу
+=======
+5. Application must start on this adress:
+>>>>>>> d907fdfeb62f84336902d58c1077c42be26838ab
 
 > * `http://localhost:8080/`
  
