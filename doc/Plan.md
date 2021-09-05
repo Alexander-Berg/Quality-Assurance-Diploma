@@ -1,391 +1,387 @@
-# План автоматизации тестирования веб-формы сервиса покупки туров интернет-банка
-## Перечень автоматизируемых сценариев:
-### 1. Позитивный сценарий для форм "Оплата по карте" и "Кредит по данным карты"
+# Automation testing plan for complex web service (Tour purchase from bank)
+## List of automated scenarios:
+### 1. Positive scenario for  "Оплата по карте" & "Кредит по данным карты"
 
-_**1.1.** Корректная загрузка формы "Оплата по карте"._
-* Нажать на вкладку "Купить".
+_**1.1.** Correctly filled fields "Оплата по карте"._
+* Press the button "Купить".
 
-**Ожидаемый результат:** 
-* Во вкладке "Купить" появилась форма для заполнения с заголовком "Оплата по карте".
+**Expected result:** 
+* In tab "Купить" emerges field with headline "Оплата по карте".
 
-_**1.2.** Обычная оплата по дебетовой карте со статусом "APPROVED" и, введенными в форму, валидными значениями:_
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "22";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
+_**1.2.** Standart purchase by debit card with "APPROVED" result, and with typed valid data:_
+* In field "Номер карты" type "4444 4444 4444 4441";
+* In field "Месяц" type "08";
+* In field "Год" type "22";
+* Field "Владелец" using data from "Faker" generator on latin symbols;
+* In field "CVC/CVV" type "123";
+* Press button "Продолжить".
 
-**Ожидаемый результат:** 
-* Кнопка "Продолжить" меняется на кнопку "Отправляем запрос в Банк..." с крутящимся индикатором загрузки.
-* В правом верхнем углу появляется всплывающее окно с сообщением "Операция одобрена Банком".
+**Expected result:** 
+* Button "Продолжить" changing to "Отправляем запрос в Банк..." with swirling loading icon.
+* In top right corner appears window with message "Операция одобрена Банком".
 
-_**1.3.** Обычная оплата по дебетовой карте со статусом "DECLINED" и, введенными в форму, валидными значениями:_
-* В поле "Номер карты" ввести "4444 4444 4444 4442";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "22";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
+_**1.3.** Standart purchase  by debit card with status "DECLINED" and with valid  data in type fields:_
+* In field "Номер карты" type "4444 4444 4444 4442";
+* In field "Месяц" type "08";
+* In field "Год" type "22";
+* Field "Владелец" filled with data from  "Faker" generation library on latin;
+* In field "CVC/CVV" type "123";
+* Press button "Продолжить".
 
-**Ожидаемый результат:**
-* Кнопка "Продолжить" меняется на кнопку "Отправляем запрос в Банк..." с крутящимся индикатором загрузки.
-* В правом верхнем углу появляется всплывающее окно с сообщением "Ошибка! Банк отказал в проведении операции".
+**Expected result:**
+* Button "Продолжить" changing to button "Отправляем запрос в Банк..." with swirling loading screen.
+* In top right cornet message appear "Ошибка! Банк отказал в проведении операции".
 
-_**1.4.** Отображение в СУБД корректной суммы, при оплате по дебетовой карте со статусом "APPROVED" и, введенными в форму,
-валидными значениями:_
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "22";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
+_**1.4.** Database shows correct values after payment, and status "APPROVED", with valid input data:_
+* In field "Номер карты" type "4444 4444 4444 4441";
+* In field "Месяц" type "08";
+* In field "Год" type "22";
+* Field "Владелец" filled with data generator "Faker"on latin alphabet.
+* In field "CVC/CVV" type "123";
+* Press button "Продолжить".
 
-**Ожидаемый результат:**
-* Кнопка "Продолжить" меняется на кнопку "Отправляем запрос в Банк..." с крутящимся индикатором загрузки;
-* В правом верхнем углу появляется всплывающее окно с сообщением "Операция одобрена Банком";
-* В таблице СУБД «payment_entity», в столбце «amount», отображается корректная сумма - '45000'.
+**Expected result:**
+* Button "Продолжить" changing to  "Отправляем запрос в Банк..." with spinning loading indicator;
+* Pop up message will appear in top right screen "Операция одобрена Банком";
+* in database table «payment_entity», in row «amount», will appear right summary - '45000'.
 
-_**1.5.** Корректная загрузка формы "Кредит по данным карты":_
-* Нажать на вкладку "Купить в кредит".
+_**1.5.** Succesful loading screen "Кредит по данным карты":_
+* press the tab "Купить в кредит".
 
-**Ожидаемый результат:**
-* Во вкладке "Купить в кредит" появилась форма для заполнения с заголовком "Кредит по данным карты".
+**Expected result:**
+*In tab"Купить в кредит" will appear form to fullfil "Кредит по данным карты".
 
-_**1.6.** Выдача кредита по данным банковской карты со статусом "APPROVED" и, введенными в форму, валидными значениями:_
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "22";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
+_**1.6.**Issuance of Credit with message "APPROVED" and with correct data inputed:_
+* In field "Номер карты" type "4444 4444 4444 4441";
+* In field "Месяц" type "08";
+* In field "Год" type "22";
+* Field "Владелец" filled with data generation service "Faker" on latin alphabet;
+* In field "CVC/CVV" type "123";
+* Press the button "Продолжить".
 
-**Ожидаемый результат:**
-* Кнопка "Продолжить" меняется на кнопку "Отправляем запрос в Банк..." с крутящимся индикатором загрузки;
-* В правом верхнем углу появляется всплывающее окно с сообщением "Операция одобрена Банком".
+**Expected result:**
+* Button "Продолжить" changing to button "Отправляем запрос в Банк..." with spinning loading indicator;
+* Po up screen will sppear in top right corner"Операция одобрена Банком".
 
-_**1.7.** Выдача кредита по данным банковской карты со статусом "DECLINED" и, введенными в форму, валидными значениями:_
-* В поле "Номер карты" ввести "4444 4444 4444 4442";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "22";
-* поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* в поле "CVC/CVV" ввести "123";
-* нажать на кнопку "Продолжить".
+_**1.7.**  Insuance of credit with status "DECLINED" with valid data on input:_
+* In field "Номер карты" type "4444 4444 4444 4442";
+* In field "Месяц" type "08";
+* In field "Год" type "22";
+* Field "Владелец" filled with generation service "Faker" on latin alphabet;
+* In field "CVC/CVV" type "123";
+* Press the button "Продолжить".
 
-**Ожидаемый результат:**
-* Кнопка "Продолжить" меняется на кнопку "Отправляем запрос в Банк..." с крутящимся индикатором загрузки;
-* В правом верхнем углу появляется всплывающее окно с сообщением "Ошибка! Банк отказал в проведении операции".
+**Expected result:**
+* Button "Продолжить" will change to "Отправляем запрос в Банк..." with spinning loading indicator
+* In top right corner popup message will appear "Ошибка! Банк отказал в проведении операции".
 
 ---
 
-### 2. Негативный сценарий для форм "Оплата по карте" и "Кредит по данным карты"
+### 2. Negative scenario for forms "Оплата по карте" and "Кредит по данным карты"
 
-_**2.1.** Обычная оплата по дебетовой карте с невалидным номером карты:_
-* В поле "Номер карты" ввести "0000 0000 0000 0001";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "22";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
+_**2.1.** Standard purchase with debit card:_
+* In field "Номер карты" type "0000 0000 0000 0001";
+* In field "Месяц" type "08";
+* In field "Год" type "22";
+* Field "Владелец" filled with data generation library "Faker" on latin alphabet;
+* In field "CVC/CVV" type "123";
+* Press the button "Продолжить".
 
-**Ожидаемый результат:**
-* Кнопка "Продолжить" меняется на кнопку "Отправляем запрос в Банк..." с крутящимся индикатором загрузки;
-* В правом верхнем углу появляется всплывающее окно с сообщением "Ошибка! Банк отказал в проведении операции".
+**Expected result:**
+* Button "Продолжить" will change to button "Отправляем запрос в Банк..." with spinning loading indicator;
+* In top right corner popup screen will appear with message "Ошибка! Банк отказал в проведении операции".
 
-_**2.2.** Обычная оплата по дебетовой карте со статусом "APPROVED" и невалидным значением в поле "Месяц":_
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "99";
-* В поле "Год" ввести "22";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
+_**2.2.** Standart payment by debit card with "APPROVED" status and non valid data "Месяц":_
+* In field "Номер карты" type "4444 4444 4444 4441";
+* In field "Месяц" type "99";
+* In field "Год" type"22";
+* Field "Владелец" filled with data library "Faker" on latin alphabet;
+* In field "CVC/CVV" type "123";
+* Press the button "Продолжить".
 
-**Ожидаемый результат:**
-* Под полем "Месяц" появляется сообщение красными буквами "Неверно указан срок действия карты".
+**Expected result:**
+* below field "Месяц"  red colored message appeares "Неверно указан срок действия карты".
 
-_**2.3.** Обычная оплата по дебетовой карте со статусом "APPROVED" и невалидным значением в поле "Год", которое меньше значения текущего года:_
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "20";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
+_**2.3.** Standart payment by debit card with status "APPROVED" and non valid data "Год":_
+* In field "Номер карты" input "4444 4444 4444 4441";
+* In field "Месяц" type "08";
+* In field "Год" type "20";
+* Field "Владелец" filled  with "Faker" data generator on latin alphabet
+* In field "CVC/CVV" type "123";
+* Press the button "Продолжить".
 
-**Ожидаемый результат:**
-* Под полем "Год" появляется сообщение красными буквами "Истёк срок действия карты".
+**Expected result:**
+* Below field "Год" red colord message appears "Истёк срок действия карты".
 
-_**2.4.** Обычная оплата по дебетовой карте со статусом "APPROVED" и  невалидным значением в поле "Год", которое не может быть сроком действия карты:_
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "99";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
+_**2.4.** Standart payment by debit card with status "APPROVED" and non valid data "Год":_
+* In field "Номер карты" type "4444 4444 4444 4441";
+* In field "Месяц" type "08";
+* In field "Год" type "99";
+* Field "Владелец" filled with "Faker" data generation library on latin alphabet
+* In field "CVC/CVV" type "123";
+* Press the button "Продолжить".
 
-**Ожидаемый результат:**
-* Под полем "Год" появляется сообщение красными буквами "Неверно указан срок действия карты".
+**Expected result:**
+* Below field "Год" red colored message appeares "Неверно указан срок действия карты".
 
-_**2.5.** Обычная оплата по дебетовой карте со статусом "APPROVED" и невалидным значением в поле "Владелец":_
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "22";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на кириллице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
+_**2.5.** Standart payment by debit card with "APPROVED" and non valid data in field "Владелец":_
+* In field "Номер карты" type "4444 4444 4444 4441";
+* In field "Месяц" type "08";
+* In field "Год" type "22";
+* Field "Владелец" filled with "Faker" data generation library with Cyrilic alphabet
+* In field "CVC/CVV" type "123";
+* Press the button "Продолжить".
 
-**Ожидаемый результат:**
-* Под полем "Владелец" появляется сообщение «Неверный формат».
-* Кнопка "Продолжить" не меняется на кнопку "Отправляем запрос в Банк..." с крутящимся индикатором загрузки. Отправка формы не выполняется.
+**Expected result:**
+* Below field "Владелец" message appears «Неверный формат».
+* Button "Продолжить" not changing to "Отправляем запрос в Банк..." with spinning loading indicator. Data is not sent.
 
-_**2.6.** Отправка пустой формы "Оплата по карте":_
-* Нажать на кнопку "Продолжить".
+_**2.6.** Empty input form "Оплата по карте":_
+* Press the button "Продолжить".
 
-**Ожидаемый результат:**
-* Под полями "Номер карты", "Месяц", "Год", "CVC/CVV", появляется сообщение красными буквами "Неверный формат";
-* Под полем "Владелец" - "Поле обязательно для заполнения";
-* Форма не отправлена.
+**Expected result:**
+* Below fields "Номер карты", "Месяц", "Год", "CVC/CVV", message will appear "Неверный формат";
+* Below field "Владелец" - "Поле обязательно для заполнения";
+* Data is not sent.
 
-_**2.7.** Заполнение полей формы "Оплата по карте" валидными значениями после отправки пустой формы:_
-* Нажать на кнопку "Продолжить".
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "22";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
+_**2.7.** Input of form "Оплата по карте" with valid data, after sending empty form:_
+* Press the button "Продолжить".
+* In field "Номер карты" type "4444 4444 4444 4441";
+* In field "Месяц" type "08";
+* In field "Год" type "22";
+* Field "Владелец" filled with "Faker" data generation library on latin alphabet 
+* In field "CVC/CVV" type "123";
+* Press the button "Продолжить".
 
-**Ожидаемый результат:**
-* После нажатия на кнопку "Продолжить", для отправки пустой формы, форма не отправилась;
-   * Под полями "Номер карты", "Месяц", "Год", "CVC/CVV", появляется сообщение красными буквами "Неверный формат»
-   * Под полем "Владелец" - "Поле обязательно для заполнения».
-* После корректного заполнения полей, кнопка "Продолжить" меняется на кнопку "Отправляем запрос в Банк..." с крутящимся индикатором загрузки. 
-   * Форма отправлена. В правом верхнем углу появляется всплывающее окно с сообщением "Операция одобрена Банком". 
-   * Всплывающие окна с параметром «visible».
-* Сообщения (красным цветом), о некорректном заполнении всех полей или отсутствии данных в некоторых полях формы, не появляются.
+*Expected result:**
+* After pressing button "Продолжить", with empty form, data is not sent;
+   * Under fields "Номер карты", "Месяц", "Год", "CVC/CVV", red colored message will appear "Неверный формат»
+   * Under field "Владелец" messsge will appear "Поле обязательно для заполнения».
+* After correct data typing, button "Продолжить" changes to  "Отправляем запрос в Банк..." with spinning loading indicator. 
+   * Data sent. In top right corner pop up message will apear"Операция одобрена Банком". * Pop up window with text «visible».
+* Messages (Red colored), about not correct data or invalid data not appears.
 
 
-_**2.8.** Заполнение полей формы "Оплата по карте" невалидными значениями:_
-* В поле "Номер карты" ввести "0000 0000 0000 0001";
-* В поле "Месяц" ввести "80";
-* В поле "Год" ввести "99";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на кириллице;
-* В поле "CVC/CVV" ввести "66";
-* Нажать на кнопку "Продолжить".
+_**2.8.** Invalid input on field "Оплата по карте" with wrong data:_
+* In field "Номер карты" type "0000 0000 0000 0001";
+* In field "Месяц" type "80";
+* In field "Год"  type"99";
+* Field "Владелец" filled with "Faker" data generation library on cyrillic alphabet.
+* In field "CVC/CVV" type "66";
+* Press the button "Продолжить".
 
-**Ожидаемый результат:**
+**Expected result:**
+* Under fields "Номер карты", "Месяц", "Год", "Владелец", "CVC/CVV", message will appear "Неверный формат".
+
+_**2.9.**Insuance of credit with non valid credit card number:_
+* In field "Номер карты" type "9999 9999 9999 9999";
+* In field "Месяц" type "08";
+* In field "Год" type "22";
+* Field "Владелец" filled with "Faker" on latin alphabet;
+* In field "CVC/CVV" type "123";
+* Press button "Продолжить".
+
+**Expected result:**
+* Button "Продолжить" changes to button  "Отправляем запрос в Банк..." with spinning loading indicator.
+* In right top corner message will appear "Ошибка! Банк отказал в проведении операции".
+
+_**2.10.** Insuanse of credit with "APPROVED" status and non valid data in field "Месяц":_
+* In field "Номер карты" type "4444 4444 4444 4441";
+* In field "Месяц" type "99";
+* In field "Год" type "22";
+* Field "Владелец" filled with "Faker" data generation libeary on latin alphabet.
+* In field "CVC/CVV" type "123";
+* Press the button "Продолжить".
+
+**Expected result:**
+* Under field "Месяц" red colored message appears "Неверно указан срок действия карты".
+
+_**2.11.** Insuance of credit with "APPROVED" status and non valid data in field "Год":_
+* In field "Номер карты" type "4444 4444 4444 4441";
+* In field "Месяц" type "08";
+* In field "Год" type "21";
+* Field "Владелец" filled with "Faker" on latin
+* In field "CVC/CVV" type "123";
+* Press the button "Продолжить".
+
+**Expected result:**
+* Under field "Год" red colored message will appear "Истёк срок действия карты".
+
+_**2.12.** Insuanse of credit with status "APPROVED" and non valid data in field "Год":_
+* In field "Месяц" type "08";
+* In field "Год" type "99";
+* Field "Владелец" filled with "Faker" on latin alphabet
+* In field "CVC/CVV" type "123";
+* Press the button "Продолжить".
+
+**Expected result:**
+* Under field "Год" red colored message will appear "Неверно указан срок действия карты".
+
+_**2.13.** Insuanse of credit with status "APPROVED" and non valid data in field "Владелец":_
+* In field "Номер карты" type "4444 4444 4444 4441";
+* On field "Месяц" type "08";
+* In field "Год" type "25";
+* Field "Владелец" filled with "Faker" data generation library on latin alphabet.
+* In field "CVC/CVV" type"123";
+* Press the button "Продолжить".
+
+**Expected Result:**
+* Under field "Владелец" red colored message appears "Неверный формат".
+
+_**2.14.** Send empty field «Кредит по данным карты»:_
+* Press the button "Продолжить".
+
+**Expected result:**
+* Under fields "Номер карты", "Месяц", "Год", "CVC/CVV", red colored message appeares "Неверный формат";
+* Under field "Владелец" -  message "Поле обязательно для заполнения". 
+* Data not sent.
+
+_**2.15.** Input on field «Кредит по данным карты» with valid data after incorect form sending:_
+* Press the button "Продолжить".
+* In field "Номер карты" type "4444 4444 4444 4441";
+* in field "Месяц" type "08";
+* In field "Год" type "22";
+* Field "Владелец" filled with "Faker" data generation library on latin alphabet.
+* In field "CVC/CVV" type "123";
+* Press the button "Продолжить".
+
+**Expected result:**
+* After pressing button "Продолжить", with emty data fields,data is not sent. 
+   * Under fields "Номер карты", "Месяц", "Год", "CVC/CVV", red colored message will appear  "Неверный формат»
+   * Under field "Владелец" - message "Поле обязательно для заполнения».
+* With correct typed data, button "Продолжить" changing to "Отправляем запрос в Банк..." with spinning loading indicator. 
+   * Data is sent. 
+   * In top right corner pop up message will appear "Операция одобрена Банком".
+   * Pop up window with message «visible».
+* Red colored messages , with incorrect data messages or no data messages, not appeared.
+
+
+_**2.16.** Input on form «Кредит по данным карты» with non valid data:_
+* In field "Номер карты" type "9999 9999 9999 9999";
+* In field "Месяц" type "80";
+* In field "Год" type "99";
+* Field "Владелец" filled with "Faker" fata generation library on cyrillic;
+* In field "CVC/CVV" type "66";
+* Press the button "Продолжить".
+
+**Expected result:**
 * Под полями "Номер карты", "Месяц", "Год", "Владелец", "CVC/CVV", появляется сообщение красными буквами "Неверный формат".
 
-_**2.9.** Выдача кредита по данным банковской карты с невалидным номером карты:_
-* в поле "Номер карты" ввести "9999 9999 9999 9999";
-* в поле "Месяц" ввести "08";
-* в поле "Год" ввести "22";
-* поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* в поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
+### List of tools to be used:
+_**1. IntelliJ IDEA** - Integrated development enviroment;_
 
-**Ожидаемый результат:**
-* Кнопка "Продолжить" меняется на кнопку "Отправляем запрос в Банк..." с крутящимся индикатором загрузки.
-* В правом верхнем углу появляется всплывающее окно с сообщением "Ошибка! Банк отказал в проведении операции".
+Advantages:
+* Code highlight;
+* Autofill;
+* Hotkeys;
+* Customization;
+* Plugin shop.
 
-_**2.10.** Выдача кредита по данным банковской карты со статусом "APPROVED" и  невалидным значением в поле "Месяц":_
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "99";
-* В поле "Год" ввести "22";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
-
-**Ожидаемый результат:**
-* Под полем "Месяц" появляется сообщение красными буквами "Неверно указан срок действия карты".
-
-_**2.11.** Выдача кредита по данным банковской карты со статусом "APPROVED" и  невалидным значением в поле "Год", которое меньше значения текущего года:_
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "21";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
-
-**Ожидаемый результат:**
-* Под полем "Год" появляется сообщение красными буквами "Истёк срок действия карты".
-
-_**2.12.** Выдача кредита по данным банковской карты со статусом "APPROVED" и  невалидным значением в поле "Год", которое не может быть сроком действия карты:_
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "99";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
-
-**Ожидаемый результат:**
-* Под полем "Год" появляется сообщение красными буквами "Неверно указан срок действия карты".
-
-_**2.13.** Выдача кредита по данным банковской карты со статусом "APPROVED" и  невалидным значением в поле "Владелец":_
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "25";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на кириллице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
-
-**Ожидаемый результат:**
-* Под полем "Владелец" красными буквами появляется сообщение красными буквами "Неверный формат".
-
-_**2.14.** Отправка пустой формы «Кредит по данным карты»:_
-* Нажать на кнопку "Продолжить".
-
-**Ожидаемый результат:**
-* Под полями "Номер карты", "Месяц", "Год", "CVC/CVV", появляется сообщение красными буквами "Неверный формат";
-* Под полем "Владелец" - "Поле обязательно для заполнения". 
-* Форма не отправлена.
-
-_**2.15.** Заполнение полей формы «Кредит по данным карты» валидными значениями после отправки пустой формы:_
-* Нажать на кнопку "Продолжить".
-* В поле "Номер карты" ввести "4444 4444 4444 4441";
-* В поле "Месяц" ввести "08";
-* В поле "Год" ввести "22";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на латинице;
-* В поле "CVC/CVV" ввести "123";
-* Нажать на кнопку "Продолжить".
-
-**Ожидаемый результат:**
-* После нажатия на кнопку "Продолжить", для отправки пустой формы, форма не отправилась. 
-   * Под полями "Номер карты", "Месяц", "Год", "CVC/CVV", появляется сообщение красными буквами "Неверный формат»
-   * Под полем "Владелец" - "Поле обязательно для заполнения».
-* После корректного заполнения полей, кнопка "Продолжить" меняется на кнопку "Отправляем запрос в Банк..." с крутящимся индикатором загрузки. 
-   * Форма отправлена. 
-   * В правом верхнем углу появляется всплывающее окно с сообщением "Операция одобрена Банком".
-   * Всплывающие окна с параметром «visible».
-* Сообщения (красным цветом), о некорректном заполнении всех полей или отсутствии данных в некоторых полях формы, не появляются.
-
-
-_**2.16.** Заполнение полей формы «Кредит по данным карты» невалидными значениями:_
-* В поле "Номер карты" ввести "9999 9999 9999 9999";
-* В поле "Месяц" ввести "80";
-* В поле "Год" ввести "99";
-* Поле "Владелец" заполнено с помощью библиотеки генерации данных "Faker" на кириллице;
-* В поле "CVC/CVV" ввести "66";
-* Нажать на кнопку "Продолжить".
-
-**Ожидаемый результат:**
-* Под полями "Номер карты", "Месяц", "Год", "Владелец", "CVC/CVV", появляется сообщение красными буквами "Неверный формат".
-
-### Перечень используемых инструментов:
-_**1. IntelliJ IDEA** - интегрированная среда разработки программного обеспечения, в которой будет выполняться написание автоматизированных сценариев;_
-
-Преимущество:
-* Подсветка кода;
-* Автоматическое завершение строки;
-* Настраиваемые горячие клавиши;
-* Настройка шрифтов;
-* Выбор цветовой схемы редактора кода.
-
-_**2. Java (JDK 11)** - объектно-ориентированный язык программирования, на котором будет выполняться написание автоматизированных сценариев;_
+_**2. Java (JDK 11)** - OOP oriented code language;_
   
-Преимущество:
-* Простота;
-* Объектно-ориентированный подход (ООП);
-* Безопасность;
-* Производительность;
-* Надёжность;
-* Независимость от аппаратной части и ОС;
-* Динамичность и адаптируемость;
-* Удобные и эффективные сетевые возможности;
+Advantages:
+* Simple;
+* Object oriented;
+* Security;
+* Performance;
+* Stability;
+* Independent from hardware and OS;
+* Dinamical & Adapted;
+* Convenient & effective network possibilities;
 
-_**4. Gradle** - система автоматической сборки;_
+_**4. Gradle** - Code build system;_
 
-Преимущество:
-* Версия нового поколения, основанная на инструменте сборки JVM, который сочетает в себе преимущества Ant и Maven;
-* Использует основанный на Groovy DSL, который отказывается от XML и является более мощным и выразительным;
-* Предоставляет набор методов управления зависимостями, которые не только хорошо настраиваются, но и совместимы с Maven и Ivy;
-* Поддерживает плавную миграцию проектов сборки Ant и Maven.
+Advantages:
+* JVM new generation build framework,includes Ant & Maven advantages;
+* Uses Groovy DSL instead of XML;
+* Supports dependency control methods, compatible with Maven и Ivy;
+* Supports Ant и Maven migration.
 
-_**5. JUnit5** - библиотека для тестирования программного обеспечения;_
+_**5. JUnit5** - library for code testing;_
 
-Преимущество:
-* Использует функционал Java 8 или более поздних релизов;
-* Добавлено функций для описания, организации и выполнения тестов;
-* Возможность использовать более одного процесса тестирования за раз, чего нельзя сделать в JUnit4.
+Advantages:
+* Usee functionality of Java 8 or later versions;
+* Added a lot of functions for test writing;
+* Added support for multiple testing processes.
 
-_**6. Lombok** - библиотека генерации кода;_
+_**6. Lombok** - library for code generation;_
 
-Преимущество:
-* Просто генерирует код;
-* Нет семантики;
-* Работает для любой версии начиная с Java 6
+Advantages:
+* Simple code generation;
+* No semantics;
+* Works foe every version from Java 6
 
-_**7. Selenide** - инструмент для тестирования Web-приложений;_
+_**7. Selenide** - tool for web services testing;_
 
-Преимущество:
-* Встроенное неявное ожидание
-* Автоматически закрытие браузера после запуска варианта использования
-* Код прост и удобен для чтения
-* Автоматически делать скриншоты неудачных тестов
-* Можно использовать с селеном.
+Advantages:
+* Integrated delay
+* Browser shutdown after tests
+* Code is simple and convinient for reading
+* Auto screenshot of failed tests
+* Selinium compatible.
 
-_**8. AppVeyor** - веб-сервис непрерывной интеграции, предназначенный для сборки и тестирования;_
+_**8. AppVeyor** - CI for testing;_
 
-Преимущество:
-* Поддерживается несколько систем управления версиями:
-* GitHub.com и GitHub Enterprise
-* Bitbucket.com и сервер Bitbucket
-* GitLab.com и GitLab Enterprise
-* Azure DevOps (репозитории Git и TFVC)
-* Настройка CI проектов через пользовательский интерфейс или в точечном файле appveyor.yml.
-* Полный sud доступ к виртуальной машине под управлением сборки
-* SQL Server 2017 для Linux.
-* Bash и ядро PowerShell для управления потоком сборки.
-* Параллельная конфигурация как для Windows, так и для Linux-сборок.
-* Предустановленный сервис Docker.
-* Встроенный сервер NuGet.
-* Единый кросс-платформенный Build Worker API как в Windows (сообщения, результаты тестов).
+Advantages:
+* Support of multiple VCS:
+* GitHub.com & GitHub Enterprise
+* Bitbucket.com &  Bitbucket server
+* GitLab.com & GitLab Enterprise
+* Azure DevOps (repositories Git & TFVC)
+* Configuration of CI projects through user interface or file appveyor.yml.
+* Full sud acsess to virtual machine
+* SQL Server 2017 for Linux.
+* Bash & PowerShell for build flow managment.
+* Parralel configuration for Windows & Linux.
+* Integrated Docker service.
+* Integrated NuGet server.
+* Cross platform Build Worker API like in  Windows (messages, test result).
 
-_**9. Allure** - инструмент построения отчетов автотестов;_
+_**9. Allure** - tool to create informative testing reports;_
 
-Преимущество:
-* Гибкий легкий многоязычный инструмент отчета о тестировании;
-* Сокращает общий жизненный цикл дефектов;
-* Модульность и расширяемость.
+Advantages:
+* Support any code language;
+* Informative test reports;
+* Modularity & extensibility.
   
-_**10. Faker** - библиотека генерации данных, с помощью которой, будут созданы данные пользователя (клиента банка);_
+_**10. Faker** - Generation data library for  fake users;_
 
-Преимущество:
-* Faker позволяет с легкостью генерировать данные и организовывать работу через API.
+Advantages:
+* Faker allows to ease random data generation for testing.
   
-_**11. Git** - инструмент, позволяющий реализовать распределённую систему контроля версий;_
+_**11. Git** - Version Control System;_
 
-Преимущество:
-* Откат к определенной точке в разработке; 
-* Логирование (ведение журнала) изменений в проекте;
-* Быстрое и удобное обновление файлов на сервере (сравнивал на личном опыте, это удобней FTP загрузки);
-* Возможность командной разработки.
+Advantages:
+* Rollback to any development version; 
+* Logging of any project changes ;
+* Fast and convinient file updates on server (сравнивал на личном опыте, это удобней FTP загрузки);
+* Team work support.
 
-_**12. GitHub** - сервис онлайн-хостинга репозиториев, обладающий всеми функциями распределённого контроля версий и функциональностью управления исходным кодом._
+_**12. GitHub** - most popular VCS._
 
-Преимущество:
-* Распределенная VCS, которую можно использовать в автономном режиме.
-* Git настолько вездесущ, что большинство других разработчиков знакомы с ним, многие проекты с открытым исходным кодом размещаются на GitHub, поэтому это отличное место, чтобы найти и внести свой вклад в эти проекты.
-* GitHub также включает сторонние интеграции, чтобы упростить рабочие процессы.
+Advantages:
+*  VCS with offline support.
+* GitHub is most popular VCS with alot of open source projects and big communities.
+* GitHub has side integrations to ease work processes.
 ---
 
-### Перечень и описание возможных рисков при автоматизации:
-* Возможны ошибки при написании автотестов;
-* Возможны ошибки в автотестах, связанные с техническим сбоем;
-* Возможны ошибки в автотестах, в связи с изменением кода;
-* Неоправданная стоимость и затраты на автоматизацию тестирования;
-* Возможен некорректный запуск симулятора банковских карт;
-* Возможны сложности при настройке двух СУБД ("MySQL" и "PostgreSQL"), и корректном подключении к каждой из них.
+### List of automation risks:
+* There can be errors in autotests writig;
+* There can be errors in autotests due to technical difficulties;
+* There can be errors in autotests due to code changing;
+* There can be unjustified costs of automation;
+* There can be errors with card emulator ;
+* There can be difficulties with launch & set up of DB ("MySQL" и "PostgreSQL"), and valid connection to them.
 
-### Интервальная оценка с учётом рисков (в часах):
-**Интервальная оценка составляет 72 часа.**
-1. Планирование автоматизации тестирования: 20 часов;
-2. Автоматизация тестирования: 36 часов;
-3. Отчетные документы по итогам автоматизированного тестирования: 8 часа;
-4. Отчетные документы по итогам автоматизации: 8 часа;
-5. Дополнительно на устранение последствий наступления рисков +15%-25% времени для реализации проекта ~10-18 часов.
+### Interval estimation with risks (in hours):
+**Interval estimation of tests automation is 72 hours.**
+1. Planing phase: 20 hours;
+2. Tests automation: 36 hours;
+3. Report documentation of tests automation: 8 hours;
+5. Risks & unexpected consequences managment (+15%-25% time) ~10-18 hours.
 
-### План сдачи работы:
-1. Планирование автоматизации тестирования: до 23.07.2021
-2. Автоматизация тестирования: до 05.08.2021
-3. Отчетные документы по итогам автоматизированного тестирования: до 10.08.2021
-4. Отчетные документы по итогам автоматизации: до 16.08.2021
+### Deadlines & time managment:
+1. Planing phase: up to 23.07.2021
+2. Testing Automation: up to 28.07.2021
+3. Test Reports & summary documents: up to 04.08.2021
+4. Automation report & summary: up to 10.08.2021

@@ -1,62 +1,63 @@
-# Отчёт о проведённой автоматизации
-## Запланировано:
+# Automation report
+## Scheduled:
 
-1. Планирование автоматизации тестирования.
+1. Planing of tests automation.
     
-2. Автоматизация:
-   * Автоматизация позитивных и негативных UI сценариев, тестирования сервисов покупки туров ("Оплата по карте" и "Кредит по данным карты");
-   * Автоматизация API сценариев;
-   * Реализация поддержки БД MySQL и PostgeSQL;
-   * Интеграция с системой репортов (Gradle/Allure);
-   * Интеграция с системой репортов (Appveyor CI).
+2. Automation:
+   * Automation of positive & negative UI scenarios, tour purchase service testing ("Оплата по карте" и "Кредит по данным карты");
+   * Automation of API csenarios;
+   * Implementation of support MySQL DB & PostgeSQL;
+   * Integration with report systems (Gradle/Allure);
+   * Integration with report system (Appveyor CI).
    
-3. Подготовке отчётных документов по итогам автоматизированного тестирования.
+3.Prepararion of test automation documentation
    
-## Сделано:
+## Done
 
-1. В соответствии с планом автоматизации ([Plan.md](Plan.md)), в проекте была реализована автоматизация тестирования всех запланированных сценариев:
-   * Позитивные сценарии покупки тура по карте;
-   * Позитивные сценарии покупки тура по карте в кредит;
-   * Сценарии позитивного и негативного тестирования всех полей формы (Номер карты, Месяц, Год, Владелец, CVC/CVV).
+1. By automation plan ([Plan.md](Plan.md)),
+in project was implemented tests automation of all planned scenarios:
+   * Positive scanarious of tour purchase with debit card;
+   * Positive scenarios of tour purchase by card on credit;
+   * Scenarios of positive & negative testing for all type fields (Card Number, Month, Year, Owner, CVC/CVV).
 
-2. Подключено и настроено для интеграции с системой репортов Appveyor CI ([.appveyor.yml](../.appveyor.yml)).
+2.Integrated to work with Appveyor CI ([.appveyor.yml](../.appveyor.yml)).
 
-3. Подключено и настроено для интеграции с системой репортов Gradle/Allure ([build.gradle](../build.gradle)).
+3. Integrated to work with Gradle/Allure ([build.gradle](../build.gradle)).
    
-4. В результате проведения тестирования сформирован отчет по итогам тестирования ([Report.md](Report.md)):
-   * В отчете указано количество тест кейсов;
-   * Статистика в % успешных/неуспешных кейсов;
-   * Общие рекомендации по устранению багов.
+4.Report was made after testing: ([Report.md](Report.md))
+   Inside the report:
+   * Test cases count;
+   * Succesful/failed cases statistics percentage;
+   * General recomendations about bug fixing.
    
-## Сработавшие риски
-* Потрачено много времени при настройке запуска симулятора банковских карт;
-* Сложности при настройке двух СУБД ("MySQL" и "PostgreSQL"), и корректном подключении к каждой из них;
-* Возникли сложности с настройкой инфраструктуры и с написанием тестов, проверяющих, как приложение вносит информацию в СУБД;
-* Потрачено много времени на интеграцию всей системы с Appveyor CI;
-* Чтобы уложиться в запланированный график по автоматизации, пришлось выделять ежедневно больше времени.
+## Triggered risks:
+* Spent more time than planned to configure & launch Bank cards emulator;
+* Some difficulties with 2 DB start ("MySQL" и "PostgreSQL"), and correct connection to them;
+* Some difficulties with writing DB tests;
+* Spent more time than planned to Appveyor CI integration.
 
-## Общий итог по времени
-1. Разработка плана тестирования:
-    * Запланировано - 20 часов, фактически потрачено - 18 часов.
-2. Подготовка и подключение необходимых инструментов, и написание автотестов: 
-    * Запланировано - 36 часа, фактически потрачено - 42 часа.
-3. Подготовка отчетной документации по итогам автоматизации тестирования: 
-    * Запланировано - 8 часов, фактически потрачено - 6 часов.
-4. На поиск и оформление багов:
-    * Запланировано, как риски +15%-25% от общего времени, фактически потрачено 9 часов.
+## Time Summary:
+1. Test plan development:
+   Planned - 24 hours, actually spent - 19 hours.
+2. Software and tools preparation, autotests writing: 
+    * Planned - 32 hours, spent - 48 hours.
+3. Reporting summary documentation : 
+    * Planned - 8 hours, spent - 6 часов.
+4. Bugs search and documentation:
+    * Planned 8 hours, +15%-25% for risks, spent 9 hours.
 
-### Итого запланировано: 
-* 72 часа с учётом на устранение последствий наступления рисков +15%-25% времени для реализации проекта ~10-18 часов.
+### Plan of time management: 
+* 70 hours +15%-25% with risks (~10-18 часов).
 
-### Итого потрачено: 
-* 75 часов
+### Time spent: 
+* 72 hours
 
-## Общий итог сдачи работы по срокам:
-1. Планирование автоматизации тестирования: 
-    * Запланировано до 23.07.2021, выполнено до 20.07.2021.
-2. Автоматизация тестирования: 
-    * Запланировано до 05.08.2021, выполнено до 26.07.2021.
-3. Отчетные документы по итогам автоматизированного тестирования: 
-    * Запланировано до 10.08.2021, выполнено до 30.07.2021.
-4. Отчетные документы по итогам автоматизации: 
-    * Запланировано до 16.08.2021, выполнено до 2.08.2021.
+## Time spent Summary:
+1. Tests automation planni: 
+    * Planned deadline 23.07.2021, done 20.07.2021.
+2. Tests Automation: 
+    * Planned deadline 05.08.2021, done 26.07.2021.
+3.  Tests  Automation Report docs : 
+    * Planned deadline 10.08.2021, done 30.07.2021.
+4. Automation accounting documents: 
+    * Planned deadline 16.08.2021, done 2.08.2021.

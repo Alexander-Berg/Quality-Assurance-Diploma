@@ -1,16 +1,16 @@
-# Отчёт о проведённом тестировании
+# Test report
 
-## Краткое описание
-> * Автоматизировано тестирование комплексного сервиса покупки тура, взаимодействующего с СУБД и API Банка.
 
-## Общее количество тест кейсов: 
-> * Общее количество тест-кейсов для обеих СУБД - 26 шт
+## Short Describtion
+> * testing automation of complex web service with Database & API .
+## Test cases count: 
+> * Test cases for both databases count- 26
 
-## Статистика успешных/неуспешных кейсов
+## Successful/failed cases statistics:
 
-### При подключении к БД MySQL
-> * Успешных кейсов 53.84% (14 кейсов)
-> * Неуспешных кейсов 46.16% (12 кейсов)
+### During connection to MySQL database:
+> * Successful cases 53.84% (14 cases)
+> * Failed cases 46.16% (12 cases)
 <details>
    <summary>Report</summary>
 
@@ -21,9 +21,9 @@
 ![ScreenShot](pic/mysql2.png)
 </details>
 
-### При подключении к БД PostgreSQL
-> * Успешных кейсов 53.84% (14 кейсов)
-> * Неуспешных кейсов 46.16% (12 кейсов)
+### During connection to PostgreSQL database
+> * Successful cases 53.84% (14 cases)
+> * Failed cases 46.16% (12 casee)
 <details>
    <summary>Report</summary>
 
@@ -34,12 +34,12 @@
 ![ScreenShot](pic/PostgreSQL2.png)
 </details>
 
-## Общие рекомендации
-1. Исправить орфографические ошибки ([Ошибка в слове Марракеш](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester/issues/1))
-2. Исправить визуальные ошибки ([Ошибка в названии вкладки](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester/issues/5)) 
-3. Исправить цвет кнопки "Купить" и "Купить в кредит", чтобы при нажатии они меняли цвет ([Красный - активная вкладка, белый - неактивная](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester/issues/4)).
-3. Исправить дефекты связанные с неверными сообщениями об ошибках.
-4. Для поля "Владелец" ввести ограничение на вводимые символы - только английские буквы, нечувствительные к регистру.
-5. Сделать кнопку "Продолжить" неактивной, если есть пустые и/или неправильно заполненные поля.
+## General recomendations
+1. Fix orthographic errors ([error in word Марракеш](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester/issues/1))
+2. Fix visual errors ([Error in tab name](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester/issues/5)) 
+3. Fix color of the button "Купить" and "Купить в кредит", they must change color on press ([Red - ative tab, White - not active](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester/issues/4)).
+3. Fix problem with incorrect error messages.
+4. For field "Владелец" make restriction for allowed symmbols - only english letters,case insensitive.
+5. Make button "Продолжить" not active, if you have blank and/or incorrectly filled fields.
 
-**Полный список найденных дефектов находится в [Issues](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester/issues)**
+**Full list of errors you can find here [Issues](https://github.com/Aleks4404/DiplomaProjectOfTheProfessionTester/issues)**
