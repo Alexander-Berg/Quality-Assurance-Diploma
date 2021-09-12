@@ -1,4 +1,4 @@
-# QA Engineer Diploma[![Build status](https://ci.appveyor.com/api/projects/status/c5wxdfokui3trvi8?svg=true)](https://ci.appveyor.com/project/Aleks4404/diplomaprojectoftheprofessiontester)
+# QA Engineer Diploma[![Build status](https://ci.appveyor.com/api/projects/status/2yj2igwn0rolwajx?svg=true)](https://ci.appveyor.com/project/Alexander-Berg/quality-assurance-diploma)
 
 # "Quality Assurance Engineer Diploma project"
 
