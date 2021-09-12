@@ -42,12 +42,12 @@ in project was implemented tests automation of all planned scenarios:
 2. Software and tools preparation, autotests writing: 
     * Planned - 32 hours, spent - 48 hours.
 3. Reporting summary documentation : 
-    * Planned - 8 hours, spent - 6 часов.
+    * Planned - 8 hours, spent - 6 hours.
 4. Bugs search and documentation:
     * Planned 8 hours, +15%-25% for risks, spent 9 hours.
 
 ### Plan of time management: 
-* 70 hours +15%-25% with risks (~10-18 часов).
+* 70 hours +15%-25% with risks (~10-18 hours).
 
 ### Time spent: 
 * 72 hours
