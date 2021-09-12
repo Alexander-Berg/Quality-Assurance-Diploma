@@ -45,4 +45,8 @@ test {
     systemProperty 'db.username', System.getProperty('db.username', 'app')
     systemProperty 'db.password', System.getProperty('db.password', 'pass')
     systemProperty 'sut.url', System.getProperty('sut.url', 'http://localhost:8080')
+    ignoreFailures = true
     }
+tasks.withType(JavaCompile) {
+    options.failOnError(false)
+}
