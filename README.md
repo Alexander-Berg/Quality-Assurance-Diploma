@@ -1,6 +1,6 @@
 # QA Engineer Diploma[![Build status](https://ci.appveyor.com/api/projects/status/2yj2igwn0rolwajx?svg=true)](https://ci.appveyor.com/project/Alexander-Berg/quality-assurance-diploma)
 
-# "Quality Assurance Engineer Diploma project"
+# Quality Assurance Engineer Diploma project
 
 Diploma project represents a complex web service testing automatization, which interacts with Bank's database & API.
 
