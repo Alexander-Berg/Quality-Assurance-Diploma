@@ -25,11 +25,11 @@ Additional guides how to install docker [here](https://github.com/netology-code/
 
 ### Application launch
 
-1. Launch requered databases (MySQL и PostgreSQL), and NodeJS. Launch parameters in file `docker-compose.yml`.
+1. Launch requered databases (MySQL or PostgreSQL), and NodeJS. Launch parameters in file `docker-compose.yml`.
 2.Write Launch command in terminal:
 > * `docker-compose up -d`
 
-2. In new terminal tab exeute command depending on database:
+2. In new terminal tab execute command depending on database:
 
 > * `java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar ./artifacts/aqa-shop.jar` - for MySQL
 > * `java -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app -jar ./artifacts/aqa-shop.jar` - for PostgreSQL
