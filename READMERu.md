@@ -1,6 +1,7 @@
-# DiplomaProjectOfTheProfessionTester [![Build status](https://ci.appveyor.com/api/projects/status/c5wxdfokui3trvi8?svg=true)](https://ci.appveyor.com/project/Aleks4404/diplomaprojectoftheprofessiontester)
 
-# Дипломный проект профессии «Тестировщик»
+
+# Дипломный проект профессии «Тестировщик» [![Build status](https://ci.appveyor.com/api/projects/status/2yj2igwn0rolwajx?svg=true)](https://ci.appveyor.com/project/Alexander-Berg/quality-assurance-diploma)
+
 
 Дипломный проект представляет собой автоматизацию тестирования комплексного сервиса, взаимодействующего с СУБД и API
 Банка.
