@@ -58,10 +58,6 @@ Additional guides how to install docker [here](https://github.com/netology-code/
 > * `gradlew allureReport`
 > * `gradlew allureServe`
 
-## SUT Shutdown
-
-1. To shutdown SUT, in terminal tab where you launched it,execute next command:
-> * `Ctrl+C`
 
 ## Docker containers shutdown
 1. To shutdown docker containers "Docker-Compose", execute next command in terminal: 
