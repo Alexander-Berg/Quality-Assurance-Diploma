@@ -1,4 +1,5 @@
 # QA Engineer Diploma[![Build status](https://ci.appveyor.com/api/projects/status/2yj2igwn0rolwajx?svg=true)](https://ci.appveyor.com/project/Alexander-Berg/quality-assurance-diploma)
+[![badge-jdk](https://img.shields.io/badge/jdk-11-blue.svg)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 # Quality Assurance Engineer Diploma project
 
