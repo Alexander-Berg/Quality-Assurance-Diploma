@@ -21,8 +21,8 @@ apply plugin: 'io.qameta.allure'
 group 'ru.netology'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = '17'
-targetCompatibility = '17'
+sourceCompatibility = '11'
+targetCompatibility = '11'
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
 
