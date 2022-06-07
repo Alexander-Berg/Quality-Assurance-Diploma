@@ -2,8 +2,18 @@ Thumbs.db*
 .DS_Store
 HELP.md
 .gradle
-build/
 .allure
+/build/tmp
+/build/allure-results
+/build/classes
+/build/downloads
+/build/generated
+/build/reports
+/build/resources
+/build/test-results
+
+
+
 
 ### STS ###
 .apt_generated
