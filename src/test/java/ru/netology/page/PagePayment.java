@@ -1,6 +1,7 @@
 package ru.netology.page;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.data.DataHelper;
 
@@ -23,10 +24,11 @@ public class PagePayment {
 
     private SelenideElement operationIsApproved = $(withText("Операция одобрена Банком"));
     private SelenideElement errorNotification = $(withText("Ошибка! Банк отказал в проведении операции."));
-    private SelenideElement invalidExpirationDate = $(withText("Неверно указан срок действия карты"));
+    private SelenideElement invalidExpirationDate = $(withText("Истёк срок действия карты"));
     private SelenideElement cardExpired = $(withText("Истёк срок действия карты"));
-    private SelenideElement wrongFormat = $(".input__sub");
+    private SelenideElement wrongFormat = $(withText("Неверный формат"));
     private SelenideElement requiredField = $(withText("Поле обязательно для заполнения"));
+    private SelenideElement NotCorrectData = $(withText("Неверный формат"));
 
 
     private SelenideElement invalidFormatCard = $$("span.input__sub").get(0);
@@ -64,12 +66,11 @@ public class PagePayment {
     }
 
     public void checkInvalidExpirationDate() {
-        invalidExpirationDate.shouldBe(Condition.visible);
+        invalidExpirationDate.shouldHave(text("Истёк срок действия карты"));;
     }
 
     public void checkCardExpired() {
-        cardExpired.shouldBe(Condition.visible);
-    }
+        cardExpired.shouldHave(text("Истёк срок действия карты"));}
 
     public void checkWrongFormat() {
         wrongFormat.shouldHave(text("Неверный формат"));
@@ -87,8 +88,7 @@ public class PagePayment {
         invalidMonth.shouldHave(text("Неверный формат"));
     }
 
-    public void checkInvalidYearT() {
-        invalidYear.shouldHave(text("Неверный формат"));
+    public void checkInvalidYearT() { invalidYear.shouldHave(text("Истёк срок действия карты"));
     }
 
     public void checkInvalidOwnerT() {
@@ -98,4 +98,9 @@ public class PagePayment {
     public void checkInvalidCVVT() {
         invalidCVV.shouldHave(text("Неверный формат"));
     }
+
+    public void checkNotCorrectData() { NotCorrectData.shouldHave(text("Неверный формат")); }
+
+
+
 }

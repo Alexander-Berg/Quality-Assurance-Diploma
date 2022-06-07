@@ -1,40 +1,77 @@
+import java.nio.charset.StandardCharsets
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "io.qameta.allure:allure-gradle:2.8.1"
+    }
+}
 plugins {
     id 'java'
-    id 'io.qameta.allure' version '2.8.1'
     id 'io.freefair.lombok' version '5.2.1'
 }
-
+apply plugin: 'idea'
+apply plugin: 'io.qameta.allure'
 group 'ru.netology'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 11
+sourceCompatibility = '17'
+targetCompatibility = '17'
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
 
+ext {
+    encoding = StandardCharsets.UTF_8.name()
+}
+
+allure {
+    version = '2.13.1'
+    aspectjweaver = true
+    autoconfigure = false
+    aspectjVersion = '1.9.1'
+    useJUnit5 { version = '2.13.1' }
+}
+
+configurations {
+    testCompile
+}
 repositories {
     mavenCentral()
 }
 
-allure {
-    autoconfigure = true
-    version = '2.14.0'
 
-    useJUnit5 {
-        version = '2.14.0'
-    }
-}
+
+
+
 
 dependencies {
+    implementation 'org.apache.maven.plugins:maven-surefire-plugin:2.22.2'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
     testImplementation 'com.codeborne:selenide:5.23.0'
     testImplementation 'mysql:mysql-connector-java:8.0.25'
     testImplementation 'org.postgresql:postgresql:42.2.14'
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
-    testImplementation 'io.qameta.allure:allure-selenide:2.14.0'
     testImplementation 'io.rest-assured:rest-assured:4.3.0'
     testImplementation 'org.slf4j:slf4j-simple:1.7.30'
-    compileOnly 'org.projectlombok:lombok:1.18.20'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testImplementation('io.qameta.allure:allure-junit5:2.13.1')
+    testImplementation('io.qameta.allure:allure-selenide:2.13.1')
+    implementation 'com.github.automatedowl:allure-environment-writer:1.0.0'
+
+
+
+
+
 
     }
 
@@ -45,8 +82,15 @@ test {
     systemProperty 'db.username', System.getProperty('db.username', 'app')
     systemProperty 'db.password', System.getProperty('db.password', 'pass')
     systemProperty 'sut.url', System.getProperty('sut.url', 'http://localhost:8080')
+
+
     ignoreFailures = true
     }
+
 tasks.withType(JavaCompile) {
     options.failOnError(false)
 }
+
+tasks.withType(Test) {
+testLogging { events 'passed', 'skipped', 'failed' }
+systemProperties = System.getProperties() as Map<String, ?>}
