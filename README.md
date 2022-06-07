@@ -69,7 +69,12 @@ Additional guides how to install docker [here](https://github.com/netology-code/
 1. To shutdown  command line running services, press Ctrl + C in all open terminal tabs
 
 ## AllureReport
-
+![](allure-report/1.png)
+![](allure-report/2.png)
+![](allure-report/3.png)
+![](allure-report/5.png)
+![](allure-report/6.png)
+![](GradleTestReport/1.png)
 
 
 # My Other Example Projects:
