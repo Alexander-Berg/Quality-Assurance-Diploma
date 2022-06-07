@@ -68,6 +68,10 @@ Additional guides how to install docker [here](https://github.com/netology-code/
 ## Command line running services shutdown
 1. To shutdown  command line running services, press Ctrl + C in all open terminal tabs
 
+## AllureReport
+
+
+
 # My Other Example Projects:
 1. My Personal Site [Mobile Automation](https://github.com/Alexander-Berg/MyPersonalSiteMobileTestAutomation.git)
 1. My Personal Site [Web Automation](https://github.com/Alexander-Berg/MyPersonalSiteMobileTestAutomation.git)
