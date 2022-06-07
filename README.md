@@ -69,8 +69,8 @@ Additional guides how to install docker [here](https://github.com/netology-code/
 1. To shutdown  command line running services, press Ctrl + C in all open terminal tabs
 
 # My Other Example Projects:
-1. [My Personal Site Mobile Automation](https://github.com/Alexander-Berg/MyPersonalSiteMobileTestAutomation.git)
-1. [My Personal Site Web Automation](https://github.com/Alexander-Berg/MyPersonalSiteMobileTestAutomation.git)
+1. My Personal Site [Mobile Automation](https://github.com/Alexander-Berg/MyPersonalSiteMobileTestAutomation.git)
+1. My Personal Site [Web Automation](https://github.com/Alexander-Berg/MyPersonalSiteMobileTestAutomation.git)
 2. Also my [Git Hub Mainpage](https://github.com/Alexander-Berg) includes more useful Quality assurance information and my personal projects
 
 
