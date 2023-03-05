@@ -2,8 +2,11 @@
 
 
 ## Short Describtion
+
 > * testing automation of complex web service with Database & API .
+
 ## Test cases count: 
+
 > * Test cases for both databases count- 26
 
 ## Successful/failed cases statistics:

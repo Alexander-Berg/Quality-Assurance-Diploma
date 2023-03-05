@@ -53,7 +53,7 @@ in project was implemented tests automation of all planned scenarios:
 * 72 hours
 
 ## Time spent Summary:
-1. Tests automation planni: 
+1. Tests automation planning: 
     * Planned deadline 23.07.2021, done 20.07.2021.
 2. Tests Automation: 
     * Planned deadline 05.08.2021, done 26.07.2021.

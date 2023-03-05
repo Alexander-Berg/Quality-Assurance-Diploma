@@ -27,7 +27,7 @@ compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
 
 ext {
-    encoding = StandardCharsets.UTF_8.name()
+  encoding = StandardCharsets.UTF_8.name()
 }
 
 allure {
@@ -92,5 +92,6 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(Test) {
-testLogging { events 'passed', 'skipped', 'failed' }
-systemProperties = System.getProperties() as Map<String, ?>}
+    testLogging { events 'passed', 'skipped', 'failed' }
+    systemProperties = System.getProperties() as Map<String, ?>
+}

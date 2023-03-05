@@ -300,7 +300,7 @@ Advantages:
 _**5. JUnit5** - library for code testing;_
 
 Advantages:
-* Usee functionality of Java 8 or later versions;
+* Use functionality of Java 8 or later versions;
 * Added a lot of functions for test writing;
 * Added support for multiple testing processes.
 
